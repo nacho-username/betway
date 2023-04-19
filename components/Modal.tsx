@@ -5,8 +5,16 @@ interface ModalProps {
   isModalOpen: boolean
 }
 
+interface FormValues {
+  [key: string]: string
+}
+
 const Modal: React.FC<ModalProps> = ({ isModalOpen }) => {
   const [activeForm, setActiveForm] = useState('login')
+  const [formValues, setFormValues] = useState<FormValues>({
+    email: '',
+    password: '',
+  })
 
   return (
     <div
