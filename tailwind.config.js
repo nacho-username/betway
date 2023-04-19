@@ -12,6 +12,10 @@ module.exports = {
     extend: {
       colors: {
         'betway-green': '#439539',
+        'betway-live': '#A6BE45',
+        'betway-casino': '#3D9CC3',
+        'betway-esports': '#9411C0',
+        'betway-vegas': '#9D2344',
       },
     },
   },
