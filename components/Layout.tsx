@@ -1,8 +1,21 @@
 import Head from 'next/head'
 import Header from './Header'
 import Navbar from './Navbar'
+import { useState } from 'react'
+import Modal from './Modal'
 
 const Layout = ({ children }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handleOpenModal = () => {
+    console.log(isModalOpen)
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
+  }
+
   return (
     <div className='h-screen'>
       <Head>
@@ -13,9 +26,10 @@ const Layout = ({ children }) => {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Header />
+      <Header onOpenModal={handleOpenModal} onCloseModal={handleCloseModal} />
       <Navbar />
       <main className='h-screen'>{children}</main>
+      {isModalOpen && <Modal isModalOpen={isModalOpen} />}
     </div>
   )
 }
