@@ -16,6 +16,16 @@ const Modal: React.FC<ModalProps> = ({ isModalOpen }) => {
     password: '',
   })
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target
+    setFormValues({ ...formValues, [name]: value })
+  }
+
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    console.log(formValues)
+  }
+
   return (
     <div
       className={`fixed inset-0 flex items-center justify-center z-50 ${
