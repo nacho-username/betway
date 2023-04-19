@@ -1,6 +1,6 @@
 const Offer = () => {
   return (
-    <div className='absolute bottom-0 w-full'>
+    <div className='fixed bottom-0 w-full'>
       <div className='flex flex-col items-center py-4 justify-start h-32 w-full bg-black opacity-80'>
         <span className='text-white text-light uppercase text-xs'>
           Sports New Customer Offer
