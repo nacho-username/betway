@@ -1,26 +1,30 @@
+import Image from 'next/image'
+
 const Header = () => {
   return (
     <header className='bg-black shadow w-full'>
       <div className='max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8'>
         <div className='flex justify-between h-16'>
           <div className='flex-shrink-0 flex items-center'>
-            <img
+            <Image
               className='block h-8 w-auto'
               src='/assets/Betway_White.png'
-              alt=''
+              alt='Betway Logo'
+              width={100}
+              height={50}
             />
           </div>
           <div className='flex items-center'>
-            <div className='hidden md:block'>
+            <div className=''>
               <a
                 href='#'
-                className='text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium'
+                className='bg-betway-green text-white hover:bg-white hover:text-betway-green px-4 py-2 text-xs font-medium'
               >
                 Login
               </a>
               <a
                 href='#'
-                className='text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium'
+                className='bg-white text-betway-green hover:betway-green hover:text-white  px-4 py-2 ml-2 text-xs font-medium'
               >
                 Signup
               </a>
