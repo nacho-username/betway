@@ -26,10 +26,15 @@ const Layout = ({ children }) => {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Header onOpenModal={handleOpenModal} onCloseModal={handleCloseModal} />
+      <Header
+        onOpenModal={handleOpenModal}
+        handleCloseModal={handleCloseModal}
+      />
       <Navbar />
       <main className='h-screen'>{children}</main>
-      {isModalOpen && <Modal isModalOpen={isModalOpen} />}
+      {isModalOpen && (
+        <Modal isModalOpen={isModalOpen} handleCloseModal={handleCloseModal} />
+      )}
     </div>
   )
 }
