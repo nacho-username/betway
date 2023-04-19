@@ -1,9 +1,16 @@
+import Image from 'next/image'
 import Layout from '../components/Layout'
 
 function Homepage() {
   return (
     <Layout>
-      <h1>Homepage</h1>
+      <Image
+        className=''
+        src='/assets/the-hunch-mobile.webp'
+        alt='The Hutch Mobile'
+        width={1920}
+        height={1080}
+      />
     </Layout>
   )
 }
