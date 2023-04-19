@@ -13,9 +13,10 @@ const Navbar = () => {
   const [activeItem, setActiveItem] = useState(0)
   const [itemColor, setItemColor] = useState(null)
 
+  console.log(activeItem)
   return (
-    <nav className='relative z-10 bg-zinc-800 flex justify-between items-center'>
-      <ul className='flex items-center justify-around w-full'>
+    <nav className='relative z-10 bg-zinc-800'>
+      <ul className='w-full grid grid-cols-5 text-center'>
         {navItems.map((item, index) => (
           <li
             key={item.name}
