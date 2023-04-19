@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-const Header = () => {
+const Header = ({ onOpenModal, onCloseModal }) => {
   return (
     <header className='relative z-10 bg-black shadow w-full'>
       <div className='max-w-7xl mx-auto py-3 px-4 sm:px-6 lg:px-8'>
@@ -17,6 +17,7 @@ const Header = () => {
           <div className='flex items-center'>
             <div className=''>
               <a
+                onClick={onOpenModal}
                 href='#'
                 className='bg-betway-green text-white hover:bg-white hover:text-betway-green px-4 py-2 text-xs font-medium'
               >
