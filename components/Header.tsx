@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-const Header = ({ onOpenModal, onCloseModal }) => {
+const Header = ({ onOpenModal, handleCloseModal }) => {
   return (
     <header className='relative z-10 bg-black shadow w-full'>
       <div className='max-w-7xl mx-auto py-3 px-4 sm:px-6 lg:px-8'>
