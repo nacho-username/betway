@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'betway-green': '#439539',
+        'betway-green': '#23AF35',
         'betway-live': '#A6BE45',
         'betway-casino': '#3D9CC3',
         'betway-esports': '#9411C0',
