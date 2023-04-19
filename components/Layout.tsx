@@ -4,7 +4,7 @@ import Navbar from './Navbar'
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className='h-screen'>
       <Head>
         <title>Betway | 100% deposit match up to R1,000 | Sports Betting</title>
         <meta
@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
       </Head>
       <Header />
       <Navbar />
-      <main>{children}</main>
+      <main className='h-screen'>{children}</main>
     </div>
   )
 }
