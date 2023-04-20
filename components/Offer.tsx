@@ -1,4 +1,4 @@
-const Offer = ({ offer }) => {
+const Offer = ({ offer, activeNavItem }) => {
   const { text, subText, btnText } = offer[0]
 
   return (
@@ -9,7 +9,10 @@ const Offer = ({ offer }) => {
         </span>
         <h3 className='text-xl text-white font-bold'>{text}</h3>
       </div>
-      <button className='absolute bottom-0 left-[50%] -translate-x-[50%] z-10 bg-betway-green mb-4 py-2 w-64 text-md text-white hover:bg-white hover:text-betway-green'>
+      <button
+        className='absolute bottom-0 left-[50%] -translate-x-[50%] z-10 mb-4 py-2 w-64 text-md text-white'
+        style={{ backgroundColor: `#${activeNavItem.accentColor}` }}
+      >
         {btnText}
       </button>
     </div>
