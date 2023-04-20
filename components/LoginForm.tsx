@@ -6,7 +6,7 @@ interface FormValues {
   [key: string]: string
 }
 
-const LoginForm = () => {
+const LoginForm = ({ setFormType }) => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
   const [errors, setErrors] = useState({
@@ -93,6 +93,14 @@ const LoginForm = () => {
 
   return (
     <>
+      <h2 className='text-2xl font-bold text-center'>Login</h2>
+      <p className='mb-4 text-sm font-light text-center'>
+        New customer{' '}
+        <span
+          onClick={() => setFormType('signup')}
+          className='underline text-betway-green'
+        ></span>
+      </p>
       <form onSubmit={handleFormSubmit}>
         <div className='mb-4'>
           <label htmlFor='email' className='block text-gray-700 text-sm mb-2'>
@@ -139,6 +147,7 @@ const LoginForm = () => {
         <button
           type='submit'
           className='bg-betway-green text-white py-2 w-52 block mx-auto hover:bg-green-700'
+          disabled={isSubmitting}
         >
           Login
         </button>
