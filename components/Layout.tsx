@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
         handleCloseModal={handleCloseModal}
       />
       <Navbar />
-      <main className='h-screen'>{children}</main>
+      <main>{children}</main>
       {isModalOpen && (
         <Modal isModalOpen={isModalOpen} handleCloseModal={handleCloseModal} />
       )}
