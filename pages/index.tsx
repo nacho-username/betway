@@ -8,7 +8,7 @@ function Homepage({ homepageData }) {
   return (
     <Layout nav={Navigation} offer={homepageOffer}>
       <Image
-        className='object-cover mt-24 md:relative md:-mt-24 w-full z-0'
+        className='object-cover mt-24 md:!relative md:-mt-24 w-full z-0'
         src='/assets/the-hunch-mobile.webp'
         alt='The Hutch Mobile'
         fill
