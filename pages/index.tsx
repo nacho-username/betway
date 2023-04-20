@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Layout from '../components/Layout'
-import Offer from '../components/Offer'
 import { fetchHomepageData } from '../helper'
 
 function Homepage({ homepageData }) {
@@ -21,11 +20,7 @@ function Homepage({ homepageData }) {
 export async function getStaticProps() {
   const { homepageData, error } = await fetchHomepageData()
 
-  if (error) {
-    return {
-      props: { error },
-    }
-  }
+  if (error) return { props: { error } }
 
   return {
     props: { homepageData },
