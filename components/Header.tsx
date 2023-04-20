@@ -15,21 +15,20 @@ const Header = ({ onOpenModal, handleCloseModal }) => {
             />
           </div>
           <div className='flex items-center'>
-            <div className=''>
-              <a
-                onClick={onOpenModal}
-                href='#'
-                className='bg-betway-green text-white hover:bg-white hover:text-betway-green px-4 py-2 text-xs font-medium'
-              >
-                Login
-              </a>
-              <a
-                href='#'
-                className='bg-white text-betway-green hover:betway-green hover:text-white  px-4 py-2 ml-2 text-xs font-medium'
-              >
-                Signup
-              </a>
-            </div>
+            <a
+              onClick={() => onOpenModal('login')}
+              href='#'
+              className='border border-betway-green bg-betway-green text-white hover:bg-white hover:text-betway-green hover:border-white px-4 py-2 text-xs font-medium'
+            >
+              Login
+            </a>
+            <a
+              onClick={() => onOpenModal('signup')}
+              href='#'
+              className='border bg-white text-betway-green hover:border-betway-green hover:text-betway-green hover:bg-transparent  px-4 py-2 ml-2 text-xs font-medium'
+            >
+              Signup
+            </a>
           </div>
         </div>
       </div>
