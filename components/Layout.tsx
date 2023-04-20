@@ -4,7 +4,7 @@ import Navbar from './Navbar'
 import { useState } from 'react'
 import Modal from './Modal'
 
-const Layout = ({ children }) => {
+const Layout = ({ children, nav }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const handleOpenModal = () => {
@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
         onOpenModal={handleOpenModal}
         handleCloseModal={handleCloseModal}
       />
-      <Navbar />
+      <Navbar nav={nav} />
       <main>{children}</main>
       {isModalOpen && (
         <Modal isModalOpen={isModalOpen} handleCloseModal={handleCloseModal} />
