@@ -3,9 +3,23 @@ import Header from './Header'
 import Navbar from './Navbar'
 import { useState } from 'react'
 import Modal from './Modal'
+import Offer from './Offer'
 
-const Layout = ({ children, nav }) => {
+type NavigationItem = {
+  id: string
+  title: string
+  href: string
+  accentColor: string
+}
+
+const Layout = ({ children, nav, offer }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [activeNavItem, setActiveNavItem] = useState<NavigationItem>({
+    id: '0',
+    title: 'sports',
+    href: '#',
+    accentColor: '00a826',
+  })
 
   const handleOpenModal = () => {
     console.log(isModalOpen)
@@ -14,6 +28,10 @@ const Layout = ({ children, nav }) => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false)
+  }
+
+  const handleNavClick = (item: NavigationItem) => {
+    setActiveNavItem(item)
   }
 
   return (
@@ -30,11 +48,16 @@ const Layout = ({ children, nav }) => {
         onOpenModal={handleOpenModal}
         handleCloseModal={handleCloseModal}
       />
-      <Navbar nav={nav} />
+      <Navbar
+        nav={nav}
+        handleNavClick={handleNavClick}
+        activeNavItem={activeNavItem}
+      />
       <main>{children}</main>
       {isModalOpen && (
         <Modal isModalOpen={isModalOpen} handleCloseModal={handleCloseModal} />
       )}
+      <Offer offer={offer} activeNavItem={activeNavItem} />
     </div>
   )
 }
