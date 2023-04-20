@@ -1,18 +1,26 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import LoginForm from './LoginForm'
+import SignUpForm from './SignUpForm'
 
 interface ModalProps {
   handleCloseModal: () => void
   isModalOpen: boolean
+  formType: string
+  setFormType: (formType: string) => void
 }
 
-const Modal: React.FC<ModalProps> = ({ isModalOpen, handleCloseModal }) => {
+const Modal: React.FC<ModalProps> = ({
+  isModalOpen,
+  handleCloseModal,
+  formType,
+  setFormType,
+}) => {
   const [activeForm, setActiveForm] = useState('login')
 
   return (
     <div
-      className={`fixed inset-0 flex items-center justify-center z-50 ${
+      className={`fixed inset-0 flex items-center justify-center z-10 ${
         isModalOpen ? 'block' : 'hidden'
       }`}
     >
@@ -23,12 +31,11 @@ const Modal: React.FC<ModalProps> = ({ isModalOpen, handleCloseModal }) => {
         >
           <span className='text-lg'>X</span>
         </button>
-        <h2 className='text-2xl font-bold text-center'>Login</h2>
-        <p className='mb-4 text-sm font-light text-center'>
-          New customer{' '}
-          <span className='underline text-betway-green'>Register here</span>
-        </p>
-        <LoginForm />
+        {formType === 'login' ? (
+          <LoginForm setFormType={setFormType} />
+        ) : (
+          <SignUpForm />
+        )}
       </div>
     </div>
   )
