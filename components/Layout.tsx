@@ -14,6 +14,7 @@ type NavigationItem = {
 
 const Layout = ({ children, nav, offer }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [formType, setFormType] = useState('')
   const [activeNavItem, setActiveNavItem] = useState<NavigationItem>({
     id: '0',
     title: 'sports',
@@ -21,8 +22,8 @@ const Layout = ({ children, nav, offer }) => {
     accentColor: '00a826',
   })
 
-  const handleOpenModal = () => {
-    console.log(isModalOpen)
+  const handleOpenModal = (formType) => {
+    setFormType(formType)
     setIsModalOpen(true)
   }
 
@@ -55,7 +56,12 @@ const Layout = ({ children, nav, offer }) => {
       />
       <main>{children}</main>
       {isModalOpen && (
-        <Modal isModalOpen={isModalOpen} handleCloseModal={handleCloseModal} />
+        <Modal
+          isModalOpen={isModalOpen}
+          handleCloseModal={handleCloseModal}
+          formType={formType}
+          setFormType={setFormType}
+        />
       )}
       <Offer offer={offer} activeNavItem={activeNavItem} />
     </div>
