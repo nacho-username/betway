@@ -1,24 +1,17 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
-const navItems = [
-  { name: 'sports', href: '#' },
-  { name: 'live & real', href: '#' },
-  { name: 'casino', href: '#' },
-  { name: 'esports', href: '#' },
-  { name: 'vegas', href: '#' },
-]
-
-const Navbar = () => {
+const Navbar = ({ nav }) => {
+  console.log(nav)
   const [activeItem, setActiveItem] = useState(0)
 
   return (
     <nav className='relative z-10 bg-zinc-800'>
       <ul className='w-full grid grid-cols-5 text-center'>
-        {navItems.map((item, index) => (
+        {nav.map((item: any, index: number) => (
           <li
-            key={item.name}
-            className={`relative py-4 ${
+            key={item.id}
+            className={`relative py-4 cursor-pointer ${
               index === activeItem ? 'text-white' : 'text-white opacity-80'
             }`}
             onMouseEnter={() => setActiveItem(index)}
@@ -28,7 +21,7 @@ const Navbar = () => {
               href={item.href}
               className=' text-xs transition ease-in-out duration-300'
             >
-              {item.name}
+              {item.title}
             </Link>
             <span
               className={`absolute bottom-0 left-0 w-full h-1 transition  ease-in-out duration-300 ${
