@@ -30,7 +30,7 @@ const LoginForm = ({ setFormType }) => {
     setIsSubmitting(true)
 
     try {
-      const res = await axios.post('/api/sign-in', formValues)
+      const res = await axios.post('/api/signin', formValues)
       setSuccessMessage(res.data.message)
       setErrors({
         emptyUsername: false,
