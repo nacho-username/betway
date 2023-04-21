@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const Header = ({ onOpenModal, handleCloseModal }) => {
   return (
-    <header className='relative z-30 bg-black shadow w-full'>
+    <header className='relative z-50 bg-black shadow w-full'>
       <div className='max-w-7xl mx-auto py-3 px-4 sm:px-6 lg:px-8'>
         <div className='flex justify-between h-16'>
           <div className='flex-shrink-0 flex items-center'>
