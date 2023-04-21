@@ -1,6 +1,7 @@
 import axios from 'axios'
 import Link from 'next/link'
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 
 interface FormValues {
   [key: string]: string
@@ -44,7 +45,14 @@ const LoginForm = ({ setFormType }) => {
           username: '',
           password: '',
         })
+
+        toast('Login Successful', {
+          hideProgressBar: true,
+          autoClose: 2000,
+          type: 'success',
+        })
       }
+
       console.log(`Welcome, ${formValues.username}`)
     } catch (err: any) {
       console.log('Error ->', errors)

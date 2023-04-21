@@ -5,6 +5,9 @@ import { useState } from 'react'
 import Modal from './Modal'
 import Offer from './Offer'
 
+import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from 'react-toastify'
+
 type NavigationItem = {
   id: string
   title: string
@@ -45,6 +48,7 @@ const Layout = ({ children, nav, offer }) => {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+      <ToastContainer />
       <Header
         onOpenModal={handleOpenModal}
         handleCloseModal={handleCloseModal}
