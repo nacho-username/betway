@@ -101,11 +101,13 @@ const LoginForm = ({ setFormType }) => {
     <>
       <h2 className='text-2xl font-bold text-center'>Login</h2>
       <p className='mb-4 text-sm font-light text-center'>
-        New customer{' '}
+        New customer?{' '}
         <span
           onClick={() => setFormType('signup')}
-          className='underline text-betway-green'
-        ></span>
+          className='underline text-betway-green cursor-pointer'
+        >
+          Register here
+        </span>
       </p>
       <form onSubmit={handleFormSubmit}>
         <div className='mb-4'>
