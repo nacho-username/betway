@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import LoginForm from './LoginForm'
-import SignUpForm from './SignUpForm'
+import SignupForm from './SignupForm'
 
 interface ModalProps {
   handleCloseModal: () => void
@@ -34,7 +34,7 @@ const Modal: React.FC<ModalProps> = ({
         {formType === 'login' ? (
           <LoginForm setFormType={setFormType} />
         ) : (
-          <SignUpForm />
+          <SignupForm setFormType={setFormType} />
         )}
       </div>
     </div>
