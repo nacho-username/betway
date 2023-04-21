@@ -45,15 +45,13 @@ const LoginForm = ({ setFormType }) => {
           username: '',
           password: '',
         })
-
-        toast('Login Successful', {
-          hideProgressBar: true,
-          autoClose: 2000,
-          type: 'success',
-        })
       }
-
-      console.log(`Welcome, ${formValues.username}`)
+      toast('Login Successful', {
+        hideProgressBar: true,
+        autoClose: 2000,
+        type: 'success',
+      })
+      console.log(`%cWelcome, ${formValues.username}`, `color: lightgreen`)
     } catch (err: any) {
       console.log('Error ->', errors)
       setErrors({
