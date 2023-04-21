@@ -36,7 +36,7 @@ const SignupForm = ({ setFormType }) => {
     setIsSubmitting(true)
 
     try {
-      const res = await axios.post('/api/signin', formValues)
+      const res = await axios.post('/api/signup', formValues)
       setSuccessMessage(res.data.message)
       setErrors({
         emptyName: false,
@@ -115,7 +115,7 @@ const SignupForm = ({ setFormType }) => {
       )
     }
   }
-
+  console.log('ERRORS>>>', errors)
   return (
     <>
       <h2 className='text-2xl font-bold text-center'>Register</h2>
