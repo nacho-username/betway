@@ -1,8 +1,11 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import Layout from '../components/Layout'
 
 describe('Layout', () => {
+  it('renders without errors', () => {
+    render(<Layout />)
+  })
   test('renders navigation items', () => {
     const nav = [
       {

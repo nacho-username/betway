@@ -5,7 +5,7 @@ import { useState } from 'react'
 import Modal from './Modal'
 import Offer from './Offer'
 
-import 'react-toastify/dist/ReactToastify.css'
+// import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
 import AnimateMoney from './AnimateMoney'
 
@@ -42,6 +42,7 @@ const Layout = ({ children, nav, offer }) => {
   }
 
   const handleNavClick = (item: NavigationItem) => {
+    console.log(item.href)
     setActiveNavItem(item)
   }
 
