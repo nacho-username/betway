@@ -7,6 +7,9 @@ import Offer from './Offer'
 
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMoneyBill } from '@fortawesome/free-solid-svg-icons'
+import AnimateMoney from './AnimateMoney'
 
 type NavigationItem = {
   id: string
@@ -18,12 +21,17 @@ type NavigationItem = {
 const Layout = ({ children, nav, offer }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [formType, setFormType] = useState('')
+  const [moneyAnimate, setMoneyAnimate] = useState(false)
   const [activeNavItem, setActiveNavItem] = useState<NavigationItem>({
     id: '0',
     title: 'sports',
     href: '#',
     accentColor: '00a826',
   })
+
+  const handleMoneyAnimation = () => {
+    setMoneyAnimate(!moneyAnimate)
+  }
 
   const handleOpenModal = (formType) => {
     setFormType(formType)
@@ -32,6 +40,7 @@ const Layout = ({ children, nav, offer }) => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false)
+    moneyAnimate && setMoneyAnimate(false)
   }
 
   const handleNavClick = (item: NavigationItem) => {
@@ -48,6 +57,7 @@ const Layout = ({ children, nav, offer }) => {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+      <AnimateMoney moneyAnimate={moneyAnimate} />
       <ToastContainer />
       <Header
         onOpenModal={handleOpenModal}
@@ -65,9 +75,15 @@ const Layout = ({ children, nav, offer }) => {
           handleCloseModal={handleCloseModal}
           formType={formType}
           setFormType={setFormType}
+          handleMoneyAnimation={handleMoneyAnimation}
         />
       )}
-      <Offer offer={offer} activeNavItem={activeNavItem} />
+      <Offer
+        offer={offer}
+        activeNavItem={activeNavItem}
+        onOpenModal={handleOpenModal}
+        handleMoneyAnimation={handleMoneyAnimation}
+      />
     </div>
   )
 }
