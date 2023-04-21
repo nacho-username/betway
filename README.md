@@ -5,6 +5,7 @@ This assessment was to recreate a Betway landing page using Next.js
 - Next.js 13 - The React framework used
 - TailwindCSS - The CSS framework used
 - Strapi Headless CMS - The Headless CMS used
+- GraphQL - Used to consume the CMS data
 - TypeScript - The language used
 
 ## Getting Started
