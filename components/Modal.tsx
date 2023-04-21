@@ -8,6 +8,7 @@ interface ModalProps {
   isModalOpen: boolean
   formType: string
   setFormType: (formType: string) => void
+  handleMoneyAnimation: () => void
 }
 
 const Modal: React.FC<ModalProps> = ({
@@ -15,19 +16,18 @@ const Modal: React.FC<ModalProps> = ({
   handleCloseModal,
   formType,
   setFormType,
+  handleMoneyAnimation,
 }) => {
-  const [activeForm, setActiveForm] = useState('login')
-
   return (
     <div
-      className={`fixed inset-0 flex items-center justify-center z-10 ${
+      className={`fixed inset-0 flex items-center justify-center z-30 ${
         isModalOpen ? 'block' : 'hidden'
       }`}
     >
       <div className='relative bg-white p-8 w-full max-w-lg'>
         <button
           className='absolute top-0 right-2 p-2'
-          onClick={handleCloseModal}
+          onClick={() => handleCloseModal()}
         >
           <span className='text-lg'>X</span>
         </button>
