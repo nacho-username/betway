@@ -34,4 +34,5 @@ Open http://localhost:3000 with your browser to see the result.
 ```
 
 ### Screenshot
-![betway-screenshots](https://user-images.githubusercontent.com/77390255/233641579-1c375e06-6f29-456f-8718-27d66e18035d.png)
+![betway-screenshots](https://user-images.githubusercontent.com/77390255/233641825-8d9803cf-f4a5-46e6-bd87-1f9b5a341656.png)
+
