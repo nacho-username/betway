@@ -7,8 +7,6 @@ import Offer from './Offer'
 
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMoneyBill } from '@fortawesome/free-solid-svg-icons'
 import AnimateMoney from './AnimateMoney'
 
 type NavigationItem = {
